@@ -1887,7 +1887,7 @@ function saveAdminPass(){
   if(!v){toast('Password can\'t be empty');return;}
   adminPass=v; DB.save(); toast('Admin password updated');
 }
-function openAdmin(){const fx=$('#fx'); if(fx)fx.style.display='none'; const vt=$('#vtoggle'); if(vt)vt.style.display='none'; document.body.classList.remove('force-mobile'); if(VP)VP.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover'); $('#site').style.display='none'; $('#admin').classList.add('open'); scrollTo(0,0); startClock(); refreshAll();}
+function openAdmin(){const fx=$('#fx'); if(fx)fx.style.display='none'; const vt=$('#vtoggle'); if(vt)vt.style.display='none'; document.body.classList.remove('force-mobile','vd'); if(VP)VP.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover'); $('#site').style.display='none'; $('#admin').classList.add('open'); $$('.ad-view').forEach(v=>v.classList.remove('show')); $('#v-dash').classList.add('show'); $$('.ad-nav button').forEach(x=>x.classList.toggle('active',x.dataset.view==='dash')); scrollTo(0,0); startClock(); refreshAll();}
 function closeAdmin(){$('#admin').classList.remove('open'); $('#site').style.display=''; const fx=$('#fx'); if(fx)fx.style.display=''; const vt=$('#vtoggle'); if(vt)vt.style.display=''; restoreView(); scrollTo(0,0);}
 
 /* ---------- simulated live updates ---------- */
